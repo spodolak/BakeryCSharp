@@ -3,7 +3,7 @@ namespace Bakery.Models
 	public class Pastry 
 	{
 		public int Price {get;} = 2;
-		public static int AddPastry(int number)
+		public int AddPastry(int number)
 		{
 			int pastryTotal = 0;
 			for(int i=1; i <= number; i++)
@@ -14,7 +14,7 @@ namespace Bakery.Models
 				} 
 				else 
 				{
-					pastryTotal += 2;
+					pastryTotal += Price;
 				}
 			}
 			return pastryTotal;
