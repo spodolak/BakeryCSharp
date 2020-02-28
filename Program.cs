@@ -10,12 +10,13 @@ namespace Bakery
 		{
 			Orders orders= new Orders() {};
 			int OrderTotal = 0;
-			Console.WriteLine("Welcome!");
+			Console.WriteLine("Welcome to The Bakery!");
 			OrderTotal = PlaceOrder(OrderTotal, orders);
 			ShowOrder(OrderTotal, orders);
 			Console.WriteLine("Thank you!");
 			Console.WriteLine("Come Again");
 		}
+		 //Prompts user to place an order
 		public static int PlaceOrder(int OrderTotal, Orders orders)
 		{
 			Console.WriteLine("Would you like to buy a loaf of bread or pastry? (Press 1 or 2)");
@@ -23,7 +24,8 @@ namespace Bakery
 			int orderType = int.Parse(Console.ReadLine());
 			return GetOrder(orderType, OrderTotal, orders);
 		}
-		public static int GetOrder(int number, int OrderTotal, Orders orders)
+		//Sorts user order by menu item. Asks user how many items they want to order. Stores price of order
+		public static int GetOrder(int number, int OrderTotal, Orders orders) 
 		{
 			if (number == 1) 
 			{
@@ -51,6 +53,7 @@ namespace Bakery
 				return OrderTotal;
 			}
 		}
+		//Asks user if they want to place another order
 		public static int ReOrder(int OrderTotal, Orders orders)
 		{
 			Console.WriteLine("Would you like to place an additional order?");
@@ -64,6 +67,7 @@ namespace Bakery
 				return OrderTotal;
 			}
 		}
+		//Displays total after all orders have been made
 		public static void ShowOrder(int OrderTotal, Orders orders)
 		{
 			orders.GetOrders();
