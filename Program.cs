@@ -15,6 +15,7 @@ namespace Bakery
 			ShowOrder(OrderTotal, orders);
 			Console.WriteLine("Thank you!");
 			Console.WriteLine("Come Again");
+			RainbowPrint("testing");
 		}
 		 //Prompts user to place an order
 		public static int PlaceOrder(int OrderTotal, Orders orders)
@@ -22,7 +23,6 @@ namespace Bakery
 			Console.WriteLine("Would you like to buy a loaf of bread or pastry? (Press 1 or 2)");
 			Console.WriteLine("              MENU");
 			Console.WriteLine("-----------------------------------");
-			Console.ForegroundColor = ConsoleColor.Blue;
 			Console.WriteLine("1) Bread $5.00   2) Pastry $2.00"); 
 			int orderType = int.Parse(Console.ReadLine());
 			return GetOrder(orderType, OrderTotal, orders);
@@ -87,7 +87,15 @@ namespace Bakery
 		}
 		public static void RainbowPrint(string text)
 		{
-
+			char[] rainbowArray = text.ToCharArray();
+			List<string> Colors = new List<string>() { "Red", "Yellow", "Green", "Blue", "Magenta" };
+			foreach(char letter in rainbowArray)
+			{
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.Write(letter);
+				Console.ForegroundColor = ConsoleColor.Yellow;
+				Console.Write(letter);
+			}
 		}
 	}
 }
