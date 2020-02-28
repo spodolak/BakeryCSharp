@@ -20,6 +20,9 @@ namespace Bakery
 		public static int PlaceOrder(int OrderTotal, Orders orders)
 		{
 			Console.WriteLine("Would you like to buy a loaf of bread or pastry? (Press 1 or 2)");
+			Console.WriteLine("              MENU");
+			Console.WriteLine("-----------------------------------");
+			Console.ForegroundColor = ConsoleColor.Blue;
 			Console.WriteLine("1) Bread $5.00   2) Pastry $2.00"); 
 			int orderType = int.Parse(Console.ReadLine());
 			return GetOrder(orderType, OrderTotal, orders);
@@ -30,6 +33,8 @@ namespace Bakery
 			if (number == 1) 
 			{
 				Bread breadOrder = new Bread();
+				Console.WriteLine("What kind of bread would you like to order?");
+				Console.WriteLine("1) Rye, 2) Sourdough");
 				Console.WriteLine("How many loaves would you like to order?");
 				int numOfLoaves = int.Parse(Console.ReadLine());
 				int breadTotal = breadOrder.AddBread(numOfLoaves);
@@ -41,6 +46,9 @@ namespace Bakery
 			else if (number == 2)
 			{
 				Pastry pastryOrder = new Pastry();
+				Console.WriteLine("What kind of pastry would you like to order?");
+				Console.WriteLine("1) Chocolate Choux, 2) Cannoli");
+				int pastryChoice = int.Parse(Console.ReadLine());
 				Console.WriteLine("How many pastries would you like to order?");
 				int numOfPastries = int.Parse(Console.ReadLine());
 				int pastryTotal = pastryOrder.AddPastry(numOfPastries);
@@ -75,6 +83,10 @@ namespace Bakery
 			Console.WriteLine("-----------------------------------");
 			Console.WriteLine("YOUR TOTAL: $" + OrderTotal + ".00");
 			Console.WriteLine("-----------------------------------");
+
+		}
+		public static void RainbowPrint(string text)
+		{
 
 		}
 	}

@@ -2,7 +2,7 @@ namespace Bakery.Models
 {
 	public class Pastry 
 	{
-		public int Price {get;} = 2;
+		public int Price {get; set;} = 2;
 		public int AddPastry(int number)
 		{
 			int pastryTotal = 0;
