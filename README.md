@@ -1,41 +1,40 @@
-# PROJECT TITLE
+# C# Bakery
 
-#### project short description
+#### A console application for a bakery
 
 #### **By Stephanie Podolak**
 
 ## Description
 
-Created with JavaScript, CSS and HTML, this site is designed to ....
+Created with C#, this console application is built to mimic a bakery. The application takes the users order for either bread or pastry and returns the total cost of the order.  2.28.2020
 
 
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Spec** | Input | Output |
-| **Spec** | Input | Output |
+| **User starts program and a welcome message is prompted** | dotnet run | Welcome to Pierre's Bakery!<br/>Would you like to buy a loaf of bread or pastry? (Press 1 or 2) <br/>1)Bread $2.00   2) Pastry $3.50 |
+| **User chooses what they would like to order (bread or pastry)** | 1) Bread <br/> 2) Pastry | How many loaves of bread would you like to purchase? <br/> How many pastries would you like to purchase? |
+| **User chooses how many items they would like to order** | 3 loaves of bread <br/> 2 pastries | Total: $13.00 <br/> Would you like to purchase anything else? |
+| **User is able to continue ordering or checkout after each item is added to total** | Order <br/> Checkout <br/> | How many loaves of bread/pastry would you like to purchase?<br/> Total: $13.00. Thank you! Come again.
+
 
 ## Setup/Installation Requirements
+(_please note that C# and .NET must be installed on your system for this program to run_)
 
-1. Clone this repository to your desktop using your prefered terminal. If using git bash type: "git clone https://github.com/spodolak/PROJECT-NAME-HERE.git" into your command line while in desktop directory.
-2. Navigate inside project directory by entering "cd PROJECT-NAME-HERE" in your terminal.
-3. Install node modules using command: "node install -y".
-4. Build webpack using command: "npm run build" OR launch a live server for development by using the command "npm run start".
+
+
+1. Clone this repository to your desktop using your prefered terminal. If using git bash type: "git clone https://github.com/spodolak/C#-Bakery.git" into your command line while in desktop directory.
+2. Navigate inside project directory by entering "cd C#-Bakery" in your terminal.
+3. Compile program by typing "dotnet build" in the console. 
+4. Start program by typing "dotnet run" in the console.
 
 
 ## Known Bugs
 * No known bugs at this time.
 
 ## Technologies Used
-* JavaScript
-* jQuery-3.4.1
-* HTML
-* CSS
-* Bootstrap-4.4.1
-* Node
-
-## Link to GitHub Pages
-[PROJECT NAME](https://spodolak.github.io/PROJECT-TITLE/)
+* C#
+* .NET
 
 ## Support and Contact Details
 
@@ -44,6 +43,6 @@ _For any questions or comments please contact:_ Stephanie Podolak
 
 ### License
 
-*{This software is licensed under the MIT license}*
+*This software is licensed under the MIT license*
 
-Copyright (c) 2020 **_{Stephanie Podolak}_**
+Copyright (c) 2020 **_Stephanie Podolak_**
