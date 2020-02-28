@@ -19,9 +19,9 @@ namespace Bakery
 			Console.WriteLine("Would you like to buy a loaf of bread or pastry? (Press 1 or 2)");
 			Console.WriteLine("1) Bread $5.00   2) Pastry $2.00"); 
 			int orderType = int.Parse(Console.ReadLine());
-			return Order(orderType, OrderTotal);
+			return GetOrder(orderType, OrderTotal);
 		}
-		public static int Order(int number, int OrderTotal)
+		public static int GetOrder(int number, int OrderTotal)
 		{
 			if (number == 1) 
 			{
@@ -45,17 +45,17 @@ namespace Bakery
 				return OrderTotal;
 			}
 		}
-		public static int ReOrder(int currentTotal)
+		public static int ReOrder(int OrderTotal)
 		{
 			Console.WriteLine("Would you like to reorder?");
 			Console.WriteLine("Y or N?");
 			string answer = Console.ReadLine();
 			if (answer.Equals("Y"))
 			{
-				return PlaceOrder(currentTotal);
+				return PlaceOrder(OrderTotal);
 			}
 			else {
-				return currentTotal;
+				return OrderTotal;
 			}
 		}
 		public static void ShowOrder(int OrderTotal)
