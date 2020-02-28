@@ -5,7 +5,7 @@ namespace Bakery.Models
   public class Orders
 	{
 		private static List<string> _orders = new List<string> {};
-		public void SetOrders(string order)
+		public void SetOrder(string order)
 		{
 			_orders.Add(order);
 		}
