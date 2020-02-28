@@ -8,11 +8,29 @@ namespace Bakery
 	{
 		public static void Main()
 		{
+			Orders orders= new Orders() {};
 			int OrderTotal = 0;
-			Console.WriteLine("Welcome to the bakery!");
+			Console.WriteLine(@",--.   ,--.       ,--.                                    ,--.             ,--------.,--.                ,-----.          ,--.                           
+|  |   |  | ,---. |  | ,---. ,---. ,--,--,--. ,---.     ,-'  '-. ,---.     '--.  .--'|  ,---.  ,---.     |  |) /_  ,--,--.|  |,-. ,---. ,--.--.,--. ,--. 
+|  |.'.|  || .-. :|  || .--'| .-. ||        || .-. :    '-.  .-'| .-. |       |  |   |  .-.  || .-. :    |  .-.  \' ,-.  ||     /| .-. :|  .--' \  '  /  
+|   ,'.   |\   --.|  |\ `--.' '-' '|  |  |  |\   --.      |  |  ' '-' '       |  |   |  | |  |\   --.    |  '--' /\ '-'  ||  \  \\   --.|  |     \   '   
+'--'   '--' `----'`--' `---' `---' `--`--`--' `----'      `--'   `---'        `--'   `--' `--' `----'    `------'  `--`--'`--'`--'`----'`--'   .-'  /    
+                                                                                                                                               `---'  ");
 			OrderTotal = PlaceOrder(OrderTotal);
 			ShowOrder(OrderTotal);
-			Console.WriteLine("Thank you! Come again.");
+			Console.WriteLine(@"                                                                      ,---. 
+,--------.,--.                     ,--.                               |   | 
+'--.  .--'|  ,---.  ,--,--.,--,--, |  |,-.     ,--. ,--.,---. ,--.,--.|  .' 
+   |  |   |  .-.  |' ,-.  ||      \|     /      \  '  /| .-. ||  ||  ||  |  
+   |  |   |  | |  |\ '-'  ||  ||  ||  \  \       \   ' ' '-' ''  ''  '`--'  
+   `--'   `--' `--' `--`--'`--''--'`--'`--'    .-'  /   `---'  `----' .--.  
+                                               `---'                  '--'");
+			Console.WriteLine(@"                                                                            
+ ,-----.                                                   ,--.             
+'  .--./ ,---. ,--,--,--. ,---.      ,--,--. ,---.  ,--,--.`--',--,--,      
+|  |    | .-. ||        || .-. :    ' ,-.  || .-. |' ,-.  |,--.|      \     
+'  '--'\' '-' '|  |  |  |\   --.    \ '-'  |' '-' '\ '-'  ||  ||  ||  |.--. 
+ `-----' `---' `--`--`--' `----'     `--`--'.`-  /  `--`--'`--'`--''--''--'");
 		}
 		public static int PlaceOrder(int OrderTotal)
 		{
@@ -29,7 +47,7 @@ namespace Bakery
 				Console.WriteLine("How many loaves would you like to order?");
 				int numOfLoaves = int.Parse(Console.ReadLine());
 				OrderTotal += breadOrder.AddBread(numOfLoaves);
-				Console.WriteLine("Order Total: $" + OrderTotal +".00");
+				Console.WriteLine(number + " Loaves of Bread: $" + OrderTotal +".00");
 				return ReOrder(OrderTotal);
 			} 
 			else if (number == 2)
@@ -38,7 +56,7 @@ namespace Bakery
 				Console.WriteLine("How many pastries would you like to order?");
 				int numOfPastries = int.Parse(Console.ReadLine());
 				OrderTotal += pastryOrder.AddPastry(numOfPastries);
-				Console.WriteLine("Order Total: $" + OrderTotal +".00");
+				Console.WriteLine(number + " Pastries: $" + OrderTotal +".00");
 				return ReOrder(OrderTotal);
 			}
 			else {
@@ -47,7 +65,7 @@ namespace Bakery
 		}
 		public static int ReOrder(int OrderTotal)
 		{
-			Console.WriteLine("Would you like to reorder?");
+			Console.WriteLine("Would you like to place an additional order?");
 			Console.WriteLine("Y or N?");
 			string answer = Console.ReadLine();
 			if (answer.Equals("Y"))
@@ -60,7 +78,16 @@ namespace Bakery
 		}
 		public static void ShowOrder(int OrderTotal)
 		{
-			Console.WriteLine("Your Total: $" + OrderTotal + ".00");
+			Console.WriteLine("5 Pastries: $3.00");
+			Console.WriteLine("5 Pastries: $3.00");
+			Console.WriteLine("5 Pastries: $3.00");
+			Console.WriteLine("5 Pastries: $3.00");
+			Console.WriteLine("5 Pastries: $3.00");
+			Console.WriteLine("-----------------------------------");
+			Console.WriteLine("-----------------------------------");
+			Console.WriteLine("YOUR TOTAL: $" + OrderTotal + ".00");
+			Console.WriteLine("-----------------------------------");
+
 		}
 	}
 }
