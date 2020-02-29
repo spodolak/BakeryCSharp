@@ -24,7 +24,7 @@ Created with C#, this console application is built to mimic a bakery. The applic
 
 
 
-1. Clone this repository to your desktop using your prefered terminal. If using git bash type: "git clone https://github.com/spodolak/C#-Bakery.git" into your command line while in desktop directory.
+1. Clone this repository to your desktop using your prefered terminal. If using git bash type: "git clone https://github.com/spodolak/C--Bakery.git" into your command line while in desktop directory.
 2. Navigate inside project directory by entering "cd C#-Bakery" in your terminal.
 3. Compile program by typing "dotnet build" in the console. 
 4. Start program by typing "dotnet run" in the console.
