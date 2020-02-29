@@ -10,7 +10,7 @@ namespace Bakery
 		{
 			Orders orders= new Orders() {};
 			int OrderTotal = 0;
-			Console.WriteLine("Welcome to The Bakery!");
+			Console.WriteLine("\u001b[31mWelcome to The Bakery!\u001b[0m");
 			OrderTotal = PlaceOrder(OrderTotal, orders);
 			ShowOrder(OrderTotal, orders);
 			Console.WriteLine("Thank you!");
@@ -88,12 +88,12 @@ namespace Bakery
 		public static void RainbowPrint(string text)
 		{
 			char[] rainbowArray = text.ToCharArray();
-			List<string> Colors = new List<string>() { "Red", "Yellow", "Green", "Blue", "Magenta" };
+			ConsoleColor[] colors = (ConsoleColor[]) ConsoleColor.GetValues(typeof(ConsoleColor));
 			foreach(char letter in rainbowArray)
 			{
-				Console.ForegroundColor = ConsoleColor.Red;
+				Console.ForegroundColor = colors[0];
 				Console.Write(letter);
-				Console.ForegroundColor = ConsoleColor.Yellow;
+				Console.ForegroundColor = colors[1];
 				Console.Write(letter);
 			}
 		}
