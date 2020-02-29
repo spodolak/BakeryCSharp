@@ -12,10 +12,11 @@ Created with C#, this console application is built to mimic a bakery. The applic
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **User starts program and a welcome message is prompted** | dotnet run | Welcome to Pierre's Bakery!<br/>Would you like to buy a loaf of bread or pastry? (Press 1 or 2) <br/>1)Bread $2.00   2) Pastry $3.50 |
+| **User starts program and a welcome message is prompted** | dotnet run | Welcome to The Bakery!<br/>Would you like to buy a loaf of bread or pastry? (Press 1 or 2) <br/>1)Bread $5.00   2) Pastry $2.00 |
 | **User chooses what they would like to order (bread or pastry)** | 1) Bread <br/> 2) Pastry | How many loaves of bread would you like to purchase? <br/> How many pastries would you like to purchase? |
-| **User chooses how many items they would like to order** | 3 loaves of bread <br/> 2 pastries | Total: $13.00 <br/> Would you like to purchase anything else? |
-| **User is able to continue ordering or checkout after each item is added to total** | Order <br/> Checkout <br/> | How many loaves of bread/pastry would you like to purchase?<br/> Total: $13.00. Thank you! Come again.
+| **User chooses how many items they would like to order** | 2 loaves of bread <br/> 2 pastries | Total: $14.00 <br/> Would you like to purchase anything else? |
+|**Menu pricing includes deals: <br/>Bread- buy 2 get 1 free.<br/>Pastry- Buy 3 for $5**|  3 loaves of bread <br/> 3 pastries | Order Total: $15.00| 
+| **User is able to continue ordering OR checkout after each item is added to total** | Order <br/> Checkout <br/> | Order: How many loaves of bread/pastry would you like to purchase?<br/> Total: $13.00. Thank you! Come again.
 
 
 ## Setup/Installation Requirements

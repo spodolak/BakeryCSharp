@@ -10,7 +10,6 @@ namespace Bakery
 		{
 			Orders orders= new Orders() {};
 			int OrderTotal = 0;
-			// Console.WriteLine("\u001b[31mWelcome to The Bakery!\u001b[0m");
 			RainbowPrint("WELCOME TO THE BAKERY!");
 			Console.WriteLine("-----------------------------------");
 			OrderTotal = PlaceOrder(OrderTotal, orders);
@@ -18,7 +17,7 @@ namespace Bakery
 			RainbowPrint("Thank you!");
 			RainbowPrint("Come Again");
 		}
-		 //Prompts user to place an order
+		//Prompts user to place an order
 		public static int PlaceOrder(int OrderTotal, Orders orders)
 		{
 			Console.WriteLine("Would you like to buy a loaf of bread or pastry? (Press 1 or 2)");
@@ -33,17 +32,18 @@ namespace Bakery
 		{
 			if (number == 1) 
 			{
-				GetBread();
+				return GetBread(number, OrderTotal, orders);
 			} 
 			else if (number == 2)
 			{
-				GetPastry();
+				return GetPastry(number, OrderTotal, orders);
 			}
 			else {
 				return OrderTotal;
 			}
 		}
-		public static int GetBread()
+		//Adds bread orders
+		public static int GetBread(int number, int OrderTotal, Orders orders)
 		{
 			Bread breadOrder = new Bread();
 			Console.WriteLine("How many loaves would you like to order?");
@@ -54,10 +54,10 @@ namespace Bakery
 			orders.SetOrder(numOfLoaves + " Loaves of Bread: $" + breadTotal + ".00");
 			return ReOrder(OrderTotal, orders);
 		}
-		public static int GetPastry()
+		//Adds pastry orders
+		public static int GetPastry(int number, int OrderTotal, Orders orders)
 		{
 			Pastry pastryOrder = new Pastry();
-			int pastryChoice = int.Parse(Console.ReadLine());
 			Console.WriteLine("How many pastries would you like to order?");
 			int numOfPastries = int.Parse(Console.ReadLine());
 			int pastryTotal = pastryOrder.AddPastry(numOfPastries);
@@ -88,9 +88,8 @@ namespace Bakery
 			Console.WriteLine("-----------------------------------");
 			Console.WriteLine("YOUR TOTAL: $" + OrderTotal + ".00");
 			Console.WriteLine("-----------------------------------");
-
 		}
-		//Just for fun method I made to return rainbow text!
+		//Just for fun method that returns rainbow text
 		public static void RainbowPrint(string text)
 		{
 			char[] rainbowArray = text.ToCharArray();
