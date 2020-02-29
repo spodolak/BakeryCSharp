@@ -10,12 +10,13 @@ namespace Bakery
 		{
 			Orders orders= new Orders() {};
 			int OrderTotal = 0;
-			Console.WriteLine("\u001b[31mWelcome to The Bakery!\u001b[0m");
+			// Console.WriteLine("\u001b[31mWelcome to The Bakery!\u001b[0m");
+			RainbowPrint("WELCOME TO THE BAKERY!");
+			Console.WriteLine("-----------------------------------");
 			OrderTotal = PlaceOrder(OrderTotal, orders);
 			ShowOrder(OrderTotal, orders);
-			Console.WriteLine("Thank you!");
-			Console.WriteLine("Come Again");
-			RainbowPrint("testing");
+			RainbowPrint("Thank you!");
+			RainbowPrint("Come Again");
 		}
 		 //Prompts user to place an order
 		public static int PlaceOrder(int OrderTotal, Orders orders)
@@ -27,39 +28,43 @@ namespace Bakery
 			int orderType = int.Parse(Console.ReadLine());
 			return GetOrder(orderType, OrderTotal, orders);
 		}
-		//Sorts user order by menu item. Asks user how many items they want to order. Stores price of order
+		//Sorts user order by menu item...bread or pastry
 		public static int GetOrder(int number, int OrderTotal, Orders orders) 
 		{
 			if (number == 1) 
 			{
-				Bread breadOrder = new Bread();
-				Console.WriteLine("What kind of bread would you like to order?");
-				Console.WriteLine("1) Rye, 2) Sourdough");
-				Console.WriteLine("How many loaves would you like to order?");
-				int numOfLoaves = int.Parse(Console.ReadLine());
-				int breadTotal = breadOrder.AddBread(numOfLoaves);
-				OrderTotal += breadTotal;
-				Console.WriteLine(numOfLoaves + " Loaves of Bread: $" + breadTotal + ".00");
-				orders.SetOrder(numOfLoaves + " Loaves of Bread: $" + breadTotal + ".00");
-				return ReOrder(OrderTotal, orders);
+				GetBread();
 			} 
 			else if (number == 2)
 			{
-				Pastry pastryOrder = new Pastry();
-				Console.WriteLine("What kind of pastry would you like to order?");
-				Console.WriteLine("1) Chocolate Choux, 2) Cannoli");
-				int pastryChoice = int.Parse(Console.ReadLine());
-				Console.WriteLine("How many pastries would you like to order?");
-				int numOfPastries = int.Parse(Console.ReadLine());
-				int pastryTotal = pastryOrder.AddPastry(numOfPastries);
-				OrderTotal += pastryTotal;
-				Console.WriteLine(numOfPastries + " Pastries: $" + pastryTotal +".00");
-				orders.SetOrder(numOfPastries + " Pastries: $" + pastryTotal +".00");
-				return ReOrder(OrderTotal, orders);
+				GetPastry();
 			}
 			else {
 				return OrderTotal;
 			}
+		}
+		public static int GetBread()
+		{
+			Bread breadOrder = new Bread();
+			Console.WriteLine("How many loaves would you like to order?");
+			int numOfLoaves = int.Parse(Console.ReadLine());
+			int breadTotal = breadOrder.AddBread(numOfLoaves);
+			OrderTotal += breadTotal;
+			Console.WriteLine(numOfLoaves + " Loaves of Bread: $" + breadTotal + ".00");
+			orders.SetOrder(numOfLoaves + " Loaves of Bread: $" + breadTotal + ".00");
+			return ReOrder(OrderTotal, orders);
+		}
+		public static int GetPastry()
+		{
+			Pastry pastryOrder = new Pastry();
+			int pastryChoice = int.Parse(Console.ReadLine());
+			Console.WriteLine("How many pastries would you like to order?");
+			int numOfPastries = int.Parse(Console.ReadLine());
+			int pastryTotal = pastryOrder.AddPastry(numOfPastries);
+			OrderTotal += pastryTotal;
+			Console.WriteLine(numOfPastries + " Pastries: $" + pastryTotal +".00");
+			orders.SetOrder(numOfPastries + " Pastries: $" + pastryTotal +".00");
+			return ReOrder(OrderTotal, orders);
 		}
 		//Asks user if they want to place another order
 		public static int ReOrder(int OrderTotal, Orders orders)
@@ -85,17 +90,27 @@ namespace Bakery
 			Console.WriteLine("-----------------------------------");
 
 		}
+		//Just for fun method I made to return rainbow text!
 		public static void RainbowPrint(string text)
 		{
 			char[] rainbowArray = text.ToCharArray();
 			ConsoleColor[] colors = (ConsoleColor[]) ConsoleColor.GetValues(typeof(ConsoleColor));
+			int i = 1;
 			foreach(char letter in rainbowArray)
 			{
-				Console.ForegroundColor = colors[0];
-				Console.Write(letter);
-				Console.ForegroundColor = colors[1];
-				Console.Write(letter);
+				if (i<15) {
+					Console.ForegroundColor = colors[i];
+					Console.Write(letter);
+					i++;
+				}
+				else {
+					i = 1;
+					Console.ForegroundColor = colors[i];
+					Console.Write(letter);
+				}
 			}
+			Console.ForegroundColor = ConsoleColor.White;
+			Console.WriteLine("");
 		}
 	}
 }
